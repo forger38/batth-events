@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>BATTH EVENTS & WEDDING SERVICES</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Wedding catering, decoration and event management services in Amritsar. Book Batth Events for weddings, birthdays and corporate events.">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: linear-gradient(to right, #f5f5f5, #eeeeee);
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 0 10px; 
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+h1 {
+    color: #800020;
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+h2 {
+    color: #5a0f1c;
+    font-size: 26px;
+    font-weight: 600; /* 👈 slightly stronger */
+    margin-top: 0;
+    margin-bottom: 12px; /* 👈 better spacing */
+    letter-spacing: 0.3px;
+}
+p, li { 
+    line-height: 1.6;
+    font-size: 16px;
+    color: #333;
+}
+ol, ul {
+    padding-left: 20px;
+}
+li {
+    margin-bottom: 8px;
+}
+.navbar {
+    text-align: center;
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    position: sticky;
+    top: 0;
+    margin-top: 10px;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.navbar a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: #800020;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.navbar a:hover {
+    color: #25D366;
+}
+.lang-buttons {
+    text-align: center;
+    margin: 15px;
+}
+
+.lang-buttons button {
+    margin: 5px;
+    padding: 8px 15px;
+    background: #800020;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+.gallery img,
+.gallery video {
+    width: 100%;
+    height: 200px;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+    display:block;
+}
+.gallery a {
+    width: 100%;
+    aspect-ratio: 4/3; /* THIS is the magic */
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+    display: block;
+}
+#gallery {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.gallery a,
+.video-item {
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.gallery a:hover,
+.video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.video-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.video-item {
+    position: relative;
+}
+
+.video-item::after {
+    content: "▶";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: white;
+    background: rgba(0,0,0,0.6);
+    padding: 12px 18px;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.video-item:hover::after {
+    background: rgba(0,0,0,0.8);
+}
+.gallery video {
+    cursor: pointer;
+}
+.gallery a::after {
+    content: "View";
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.gallery a:hover::after {
+    opacity: 1;
+}
+.btn {
+    display: inline-block;
+    width: auto;
+    max-width: 300px;
+    padding: 12px 20px;
+    margin: 10px 5px;
+    background: linear-gradient(45deg, #25D366, #1ebe5d);
+    color: white;
+
+    text-decoration: none;
+    border-radius: 25px; /* 👈 BIG CHANGE */
+
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: all 0.25s ease;
+}
+.btn:hover {
+    transform: translateY(-2px); /* 👈 more premium than scale */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+input, select, textarea {
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: #800020;
+    box-shadow: 0 0 5px rgba(128,0,32,0.2);
+}
+@media (max-width: 600px) {
+    body {
+        margin: 10px;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
+section {
+    margin-bottom: 35px;
+    padding: 10px 5px; /* 👈 less box feeling */
+    background-color: transparent; /* 👈 remove white card */
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid #eee; /* 👈 subtle divider instead */
+}
+section h2, section h3 {
+    text-align: center;
+    color: #5a0f1c;
+    margin-bottom: 8px;
+}
+section:hover {
+    background-color: rgba(0,0,0,0.01); /* 👈 very subtle */
+}
+.hero {
+    animation: fadeIn 1.2s ease-in-out;
+    background-image: url('hero.jpeg'); /* use your best image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: center;
+    position: relative;
+}
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 10px;
+}
+.hero h1 {
+    font-size: 38px;
+    font-weight: bold;
+    color: #ffffff; /* pure white */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    letter-spacing: 1px;
+}
+.hero h1,
+.hero p,
+.hero a {
+    position: relative;
+    z-index: 1;
+}
+.hero p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #f1f1f1;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+.hero .btn {
+    width: auto;              /* 👈 no full width */
+    display: inline-block;
+    margin-top: 15px;
+}
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    font-size: 24px;
+    padding: 15px 18px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.whatsapp-float:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.1);
+}
+.whatsapp-float img {
+    width: 30px;
+    height: 30px;
+}
+html {
+    scroll-behavior: smooth;
+}
+#reviews p {
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+
+.btn-section {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.fomo {
+    text-align: center;
+    color: #b30000; /* slightly deeper red (more premium than bright red) */
+    font-size: 12px;
+    font-weight: 600;
+    margin: 15px 0 25px 0;
+    letter-spacing: 0.5px;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+/* smaller buttons */
+.btn.small {
+    width: auto; /* 👈 removes long stretched look */
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 25px;
+    white-space: nowrap;
+}
+.btn.emergency {
+    width: auto;
+    text-align: center;
+}
+.small-text {
+    font-size: 14px;
+    color: #555;
+}
+section p {
+    margin-bottom: 12px;
+}
+.highlight {
+    font-size: 18px;
+    font-weight: bold;
+    color: #800020;
+}
+.lang {
+    transition: opacity 0.3s ease;
+    display: none;
+}
+.lang.en {
+    display: block;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="lang-buttons">
+        <button onclick="showLang('en')">English</button>
+        <button onclick="showLang('hi')">Hindi</button>
+        <button onclick="showLang('pa')">Punjabi</button>
+    </div>
+<nav class="navbar">
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+<a href="#why">Why Choose Us</a> 
+</nav>
+    <div class="hero">
+    <h1>BATTH EVENTS & WEDDING SERVICES</h1>
+    <p>Catering | Decoration | Lighting | Full Event Management</p>
+<!-- ENGLISH -->
+<div class="lang en">
+    <p>Make Your Wedding Stress-Free & Memorable</p>
+    <p>Complete Catering, Decoration & Event Management in Amritsar</p>
+</div>
+
+<!-- HINDI -->
+<div class="lang hi" style="display:none;">
+    <p>अपनी शादी को आसान और यादगार बनाएं</p>
+    <p>अमृतसर में कैटरिंग, डेकोरेशन और इवेंट मैनेजमेंट</p>
+</div>
+
+<!-- PUNJABI -->
+<div class="lang pa" style="display:none;">
+    <p>ਆਪਣੀ ਵਿਆਹ ਨੂੰ ਆਸਾਨ ਤੇ ਯਾਦਗਾਰ ਬਣਾਓ</p>
+    <p>ਅੰਮ੍ਰਿਤਸਰ ਵਿੱਚ ਕੇਟਰਿੰਗ, ਡੇਕੋਰੇਸ਼ਨ ਅਤੇ ਇਵੈਂਟ ਮੈਨੇਜਮੈਂਟ</p>
+</div>
+     <a href="https://wa.me/919915469651" class="btn">Book Now</a>
+</div>
+<!-- PRICING SECTION -->
+<div style="text-align:center; margin:20px 0;">
+
+    <!-- ENGLISH -->
+    <div class="lang en">
+        <p class="highlight">
+            Packages starting from ₹80,000
+        </p>
+        <p class="small-text">
+            Custom packages available based on your requirements
+        </p>
+    </div>
+<p style="text-align:center; font-size:13px; color:#666;">
+    Trusted by 500+ families in Amritsar
+</p>
+    <!-- HINDI -->
+    <div class="lang hi" style="display:none;">
+        <p style="font-size:18px; font-weight:bold; color:#800020;">
+            पैकेज ₹80,000 से शुरू
+        </p>
+        <p style="font-size:14px; color:#555;">
+            आपकी जरूरत के अनुसार कस्टम पैकेज उपलब्ध
+        </p>
+        <p style="text-align:center; font-size:13px; color:#666;">
+             500+ खुश ग्राहकों द्वारा भरोसेमंद
+        </p>
+    </div>
+
+    <!-- PUNJABI -->
+    <div class="lang pa" style="display:none;">
+        <p style="font-size:18px; font-weight:bold; color:#800020;">
+            ਪੈਕੇਜ ₹80,000 ਤੋਂ ਸ਼ੁਰੂ
+        </p>
+        <p style="font-size:14px; color:#555;">
+            ਤੁਹਾਡੀ ਲੋੜ ਮੁਤਾਬਕ ਕਸਟਮ ਪੈਕੇਜ ਉਪਲਬਧ
+        </p>
+        <p style="text-align:center; font-size:13px; color:#666;">
+            500+ ਖੁਸ਼ ਗਾਹਕਾਂ ਦਾ ਭਰੋਸਾ
+        </p>
+    </div>
+
+</div>
+<div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:25px 0; text-align:center;">
+
+    <!-- ENGLISH -->
+    <div class="lang en">
+        <h2 style="color:#800020;">15+</h2>
+        <p>Years Experience</p>
+    </div>
+
+    <div class="lang en">
+        <h2 style="color:#800020;">500+</h2>
+        <p>Events Managed</p>
+    </div>
+
+    <div class="lang en">
+        <h2 style="color:#800020;">100%</h2>
+        <p>Customer Satisfaction</p>
+    </div>
+
+    <!-- HINDI -->
+    <div class="lang hi" style="display:none;">
+        <h2 style="color:#800020;">15+</h2>
+        <p>सालों का अनुभव</p>
+    </div>
+
+    <div class="lang hi" style="display:none;">
+        <h2 style="color:#800020;">500+</h2>
+        <p>इवेंट आयोजित</p>
+    </div>
+
+    <div class="lang hi" style="display:none;">
+        <h2 style="color:#800020;">100%</h2>
+        <p>ग्राहक संतुष्टि</p>
+    </div>
+
+    <!-- PUNJABI -->
+    <div class="lang pa" style="display:none;">
+        <h2 style="color:#800020;">15+</h2>
+        <p>ਸਾਲਾਂ ਦਾ ਤਜਰਬਾ</p>
+    </div>
+
+    <div class="lang pa" style="display:none;">
+        <h2 style="color:#800020;">500+</h2>
+        <p>ਇਵੈਂਟ ਕੀਤੇ</p>
+    </div>
+
+    <div class="lang pa" style="display:none;">
+        <h2 style="color:#800020;">100%</h2>
+        <p>ਗਾਹਕ ਸੰਤੁਸ਼ਟੀ</p>
+    </div>
+
+</div>
+
+<div class="fomo">
+    Limited bookings available for this season — Book Now!
+</div>
+<!-- INTRO -->
+<div class="lang en">
+<p>We provide catering and wedding management services in Amritsar and nearby areas.</p>
+
+<p>Our team has been in this business for more than 15 years. Customer satisfaction is our top priority and we are always committed to making your event memorable. We offer a wide range of menus, and customers can also customise their menus according to their requirements. We also provide services for smaller events like birthday parties, corporate events, wedding anniversaries, and opening ceremonies.</p>
+</div>
+
+<div class="lang hi" style="display:none;">
+<p>हम अमृतसर और आसपास के क्षेत्रों में कैटरिंग और वेडिंग मैनेजमेंट सेवाएं प्रदान करते हैं।</p>
+
+<p>हमारी टीम पिछले 15 वर्षों से इस व्यवसाय में है। ग्राहक संतुष्टि हमारी प्राथमिकता है और हम आपके कार्यक्रम को यादगार बनाने के लिए हमेशा प्रतिबद्ध हैं। हम विभिन्न प्रकार के मेन्यू प्रदान करते हैं और ग्राहक अपनी आवश्यकताओं के अनुसार मेन्यू को कस्टमाइज भी कर सकते हैं। हम छोटे कार्यक्रम जैसे जन्मदिन, कॉर्पोरेट इवेंट, वर्षगांठ और उद्घाटन समारोह भी आयोजित करते हैं।</p>
+</div>
+
+<div class="lang pa" style="display:none;">
+<p>ਅਸੀਂ ਅੰਮ੍ਰਿਤਸਰ ਅਤੇ ਨੇੜਲੇ ਇਲਾਕਿਆਂ ਵਿੱਚ ਕੇਟਰਿੰਗ ਅਤੇ ਵਿਆਹ ਪ੍ਰਬੰਧਨ ਸੇਵਾਵਾਂ ਪ੍ਰਦਾਨ ਕਰਦੇ ਹਾਂ।</p>
+
+<p>ਸਾਡੀ ਟੀਮ ਪਿਛਲੇ 15 ਸਾਲਾਂ ਤੋਂ ਇਸ ਕਾਰੋਬਾਰ ਵਿੱਚ ਹੈ। ਗਾਹਕਾਂ ਦੀ ਸੰਤੁਸ਼ਟੀ ਸਾਡੀ ਪਹਿਲ ਹੈ ਅਤੇ ਅਸੀਂ ਤੁਹਾਡੇ ਸਮਾਗਮ ਨੂੰ ਯਾਦਗਾਰ ਬਣਾਉਣ ਲਈ ਹਮੇਸ਼ਾਂ ਤਿਆਰ ਹਾਂ। ਅਸੀਂ ਵੱਖ-ਵੱਖ ਮੇਨੂ ਪ੍ਰਦਾਨ ਕਰਦੇ ਹਾਂ ਅਤੇ ਗਾਹਕ ਆਪਣੀ ਲੋੜ ਅਨੁਸਾਰ ਮੇਨੂ ਕਸਟਮਾਈਜ਼ ਕਰ ਸਕਦੇ ਹਨ। ਅਸੀਂ ਛੋਟੇ ਸਮਾਗਮ ਜਿਵੇਂ ਜਨਮਦਿਨ, ਕਾਰਪੋਰੇਟ ਇਵੈਂਟ, ਵਰ੍ਹੇਗੰਢ ਅਤੇ ਉਦਘਾਟਨ ਸਮਾਗਮ ਵੀ ਕਰਦੇ ਹਾਂ।</p>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+
+<div class="lang en">
+<h2>OUR SERVICES</h2>
+<ol>
+<li>Wedding or event planning</li>
+<li>Decorations</li>
+<li>Lighting</li>
+<li>Catering</li>
+</ol>
+</div>
+
+<div class="lang hi" style="display:none;">
+<h2>हमारी सेवाएं</h2>
+<ol>
+<li>शादी या इवेंट प्लानिंग</li>
+<li>सजावट</li>
+<li>लाइटिंग</li>
+<li>कैटरिंग</li>
+</ol>
+</div>
+
+<div class="lang pa" style="display:none;">
+<h2>ਸਾਡੀਆਂ ਸੇਵਾਵਾਂ</h2>
+<ol>
+<li>ਵਿਆਹ ਜਾਂ ਇਵੈਂਟ ਯੋਜਨਾ</li>
+<li>ਸਜਾਵਟ</li>
+<li>ਲਾਈਟਿੰਗ</li>
+<li>ਕੇਟਰਿੰਗ</li>
+</ol>
+</div>
+
+</section>
+<div class="btn-section">
+    <a href="https://wa.me/919915469651" class="btn">
+        Get Instant Quote on WhatsApp
+    </a>
+</div>
+<!-- WHY CHOOSE -->
+<section id="why">
+
+<div class="lang en">
+<h2>WHY CHOOSE OUR SERVICES?</h2>
+<ul>
+<li>Environmental-friendly services with recyclable disposables</li>
+<li>High-quality ingredients used in our food</li>
+<li>Experienced chefs and event planners</li>
+<li>Flexible pricing and packages</li>
+<li>Proper waste collection and recycling</li>
+</ul>
+</div>
+
+<div class="lang hi" style="display:none;">
+<h2>हमारी सेवाएं क्यों चुनें?</h2>
+<ul>
+<li>पर्यावरण के अनुकूल सेवाएं</li>
+<li>उच्च गुणवत्ता की सामग्री</li>
+<li>अनुभवी शेफ और प्लानर्स</li>
+<li>लचीले पैकेज</li>
+<li>कचरा प्रबंधन और रीसाइक्लिंग</li>
+</ul>
+</div>
+
+<div class="lang pa" style="display:none;">
+<h2>ਸਾਡੀਆਂ ਸੇਵਾਵਾਂ ਕਿਉਂ ਚੁਣੋ?</h2>
+<ul>
+<li>ਪਰਿਆਵਰਨ-ਮਿੱਤਰ ਸੇਵਾਵਾਂ</li>
+<li>ਉੱਚ ਗੁਣਵੱਤਾ ਵਾਲੀ ਸਮੱਗਰੀ</li>
+<li>ਅਨੁਭਵੀ ਸ਼ੈਫ ਅਤੇ ਪਲੈਨਰ</li>
+<li>ਲਚਕੀਲੇ ਪੈਕੇਜ</li>
+<li>ਕਚਰੇ ਦੀ ਸਹੀ ਸੰਭਾਲ ਅਤੇ ਰੀਸਾਈਕਲਿੰਗ</li>
+</ul>
+</div>
+
+</section>
+<!-- GALLERY -->
+<!-- GALLERY -->
+<section id="gallery">
+
+<!-- ENGLISH -->
+<div class="lang en">
+<h2>OUR WORK</h2>
+<p style="text-align:center; color:#555;">A glimpse of our recent events & decorations</p>
+    <h3>Images</h3>
+    <div class="gallery">
+
+        <a href="real1.png" target="_blank">
+            <img src="real1.png" alt="Punjabi wedding stage decoration in Amritsar by Batth Events">
+        </a>
+
+        <a href="photo2.jpeg" target="_blank">
+            <img src="photo2.jpeg" alt="Haldi stage decoration with yellow and orange theme for wedding event in Punjab">
+        </a>
+
+        <a href="real2.png" target="_blank">
+            <img src="real2.png" alt="Backstage wedding decoration with flowers in Amritsar">
+        </a>
+
+        <a href="real4.png" target="_blank">
+            <img src="real4.png" alt="Punjabi wedding decoration with floral design">
+        </a>
+
+        <a href="real5.png" target="_blank">
+            <img src="real5.png" alt="Cocktail counters setup">
+        </a>
+
+        <a href="real6.png" target="_blank">
+            <img src="real6.png" alt="Live cocktail station setup for wedding event in Punjab">
+        </a>
+
+        <a href="real10.jpeg" target="_blank">
+            <img src="real10.jpeg" alt="Wedding home decoration setup in Amritsar">
+        </a>
+
+        <a href="real9.jpeg" target="_blank">
+            <img src="real9.jpeg" alt="Decoration and lighting setup for wedding event in Amritsar">
+        </a>
+
+        <a href="real8.jpeg" target="_blank">
+            <img src="real8.jpeg" alt="Full wedding event furniture setup in Amritsar">
+        </a>
+
+    </div>
+
+    <h3>Videos</h3>
+    <div class="gallery">
+        <!-- Videos -->
+
+<div class="video-item">
+    <video controls muted loop playsinline title="Punjabi wedding decoration video in Amritsar">
+        <source src="video6-2.mp4" type="video/mp4">
+    </video>
+</div>
+
+<div class="video-item">
+    <video controls muted loop playsinline title="Wedding lighting and decoration video">
+        <source src="video2.mp4" type="video/mp4">
+    </video>
+</div>
+
+     </div>
+</div>
+
+<!-- HINDI -->
+<div class="lang hi" style="display:none;">
+    <h2>हमारा काम</h2>
+    <h3>तस्वीरें</h3>
+    <div class="gallery"></div>
+
+    <h3>वीडियो</h3>
+    <div class="gallery"></div>
+</div>
+
+<!-- PUNJABI -->
+<div class="lang pa" style="display:none;">
+    <h2>ਸਾਡਾ ਕੰਮ</h2>
+    <h3>ਤਸਵੀਰਾਂ</h3>
+    <div class="gallery"></div>
+
+    <h3>ਵੀਡੀਓ</h3>
+    <div class="gallery"></div>
+</div>
+
+</section>
+<section id="reviews">
+<!-- ENGLISH -->
+<div class="lang en">
+    <h2>WHAT OUR CUSTOMERS SAY</h2>
+    <p style="text-align:center;">
+        ⭐⭐⭐⭐⭐ “Amazing decoration and food. Everything was perfectly managed.” <br>
+        ⭐⭐⭐⭐⭐ “Very professional team. Made our wedding unforgettable.” <br>
+        ⭐⭐⭐⭐⭐ “Great service at reasonable price. Highly recommended.”
+    </p>
+</div>
+
+<!-- HINDI -->
+<div class="lang hi" style="display:none;">
+    <h2>ग्राहकों की राय</h2>
+    <p style="text-align:center;">
+        ⭐⭐⭐⭐⭐ “शानदार डेकोरेशन और खाना। सब कुछ बहुत अच्छे से मैनेज किया गया।” <br>
+        ⭐⭐⭐⭐⭐ “बहुत प्रोफेशनल टीम। हमारी शादी यादगार बना दी।” <br>
+        ⭐⭐⭐⭐⭐ “उचित कीमत पर बेहतरीन सेवा। जरूर सिफारिश करेंगे।”
+    </p>
+</div>
+
+<!-- PUNJABI -->
+<div class="lang pa" style="display:none;">
+    <h2>ਗਾਹਕਾਂ ਦੀ ਰਾਇ</h2>
+    <p style="text-align:center;">
+        ⭐⭐⭐⭐⭐ “ਬਹੁਤ ਵਧੀਆ ਡੇਕੋਰੇਸ਼ਨ ਤੇ ਖਾਣਾ। ਸਭ ਕੁਝ ਬੜੇ ਚੰਗੇ ਤਰੀਕੇ ਨਾਲ ਕੀਤਾ।” <br>
+        ⭐⭐⭐⭐⭐ “ਬਹੁਤ ਪ੍ਰੋਫੈਸ਼ਨਲ ਟੀਮ। ਸਾਡੀ ਵਿਆਹ ਨੂੰ ਯਾਦਗਾਰ ਬਣਾ ਦਿੱਤਾ।”<br> 
+        ⭐⭐⭐⭐⭐ “ਵਧੀਆ ਸੇਵਾ ਅਤੇ ਠੀਕ ਕੀਮਤ। ਜ਼ਰੂਰ ਸਿਫਾਰਸ਼ ਕਰਾਂਗੇ।”
+    </p>
+</div>
+</section>
+
+<section id="booking">
+
+<!-- ENGLISH -->
+<div class="lang en">
+<h2>BOOK YOUR EVENT</h2>
+</div>
+
+<div class="lang hi" style="display:none;">
+<h2>अपना इवेंट बुक करें</h2>
+</div>
+
+<div class="lang pa" style="display:none;">
+<h2>ਆਪਣਾ ਇਵੈਂਟ ਬੁੱਕ ਕਰੋ</h2>
+</div>
+
+<div style="text-align:center;">
+
+<input type="text" id="name" placeholder="Your Name"><br><br>
+
+<input type="tel" id="phone" placeholder="Your Phone Number"><br><br>
+
+<select id="eventType" onchange="checkOther()">
+    <option value="">Select Event Type</option>
+    <option value="Wedding">Wedding</option>
+    <option value="Birthday">Birthday</option>
+    <option value="Corporate Event">Corporate Event</option>
+    <option value="Anniversary">Anniversary</option>
+    <option value="Other">Other</option>
+</select><br><br>
+
+<input type="text" id="otherEvent" placeholder="Enter your event type" style="display:none;"><br><br>
+
+<input type="date" id="date"><br><br>
+
+<textarea id="message" placeholder="Additional details"></textarea><br><br>
+
+<button type="button" onclick="sendWhatsApp()" class="btn">Send on WhatsApp</button>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+<div class="lang en">
+<h2>CONTACT US</h2>
+</div>
+
+<div class="lang hi" style="display:none;">
+<h2>संपर्क करें</h2>
+</div>
+
+<div class="lang pa" style="display:none;">
+<h2>ਸੰਪਰਕ ਕਰੋ</h2>
+</div>
+
+<div class="contact-buttons">
+    <a href="https://wa.me/919872598076" class="btn small">Manager</a>
+    <a href="https://wa.me/919915469651" class="btn small">Owner</a>
+    <a href="https://wa.me/919876547956" class="btn small emergency">Another Contact</a>
+</div>
+
+</section>
+<section id="location">
+<!-- ENGLISH -->
+<div class="lang en">
+    <h2>OUR LOCATION</h2>
+    <p style="text-align:center;">
+        Serving at your location across Amritsar & nearby areas
+    </p>
+</div>
+<!-- HINDI -->
+<div class="lang hi" style="display:none;">
+    <h2>हमारा स्थान</h2>
+    <p style="text-align:center;">
+        हम अमृतसर और आसपास के क्षेत्रों में सेवाएं प्रदान करते हैं
+    </p>
+</div>
+<!-- PUNJABI -->
+<div class="lang pa" style="display:none;">
+    <h2>ਸਾਡਾ ਸਥਾਨ</h2>
+    <p style="text-align:center;">
+        ਅਸੀਂ ਅੰਮ੍ਰਿਤਸਰ ਅਤੇ ਨੇੜਲੇ ਇਲਾਕਿਆਂ ਵਿੱਚ ਸੇਵਾਵਾਂ ਦਿੰਦੇ ਹਾਂ
+    </p>
+</div>
+<!-- MAP (same for all languages) -->
+<div style="text-align:center;">
+    <iframe 
+        src="https://www.google.com/maps?q=Amritsar&output=embed"
+        width="100%" 
+        height="300" 
+        style="border:0; border-radius:10px;"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+</div>
+</section></div>    
+<script>
+function showLang(lang) {
+let all = document.querySelectorAll('.lang');
+all.forEach(el => el.style.display = 'none');
+
+let selected = document.querySelectorAll('.' + lang);
+selected.forEach(el => el.style.display = 'block');
+}
+</script>
+
+<script>
+function checkOther() {
+    let event = document.getElementById("eventType").value;
+    let otherField = document.getElementById("otherEvent");
+
+    if (event === "Other") {
+        otherField.style.display = "block";
+    } else {
+        otherField.style.display = "none";
+    }
+}
+
+function sendWhatsApp() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let event = document.getElementById("eventType").value;
+    let other = document.getElementById("otherEvent").value;
+    let date = document.getElementById("date").value;
+    let message = document.getElementById("message").value;
+    if (name === "" || phone === "" || event === "" || date === "") {
+    alert("Please fill all required fields");
+    return;
+    }
+    if (event === "Other" && other !== "") {
+        event = other;
+    }
+
+    let finalMessage = "Hello, my name is " + name +
+    ". I want to book an event.\nEvent Type: " + event +
+    "\nDate: " + date +
+    "\nDetails: " + message;
+
+    let url = "https://wa.me/919915469651?text=" + encodeURIComponent(finalMessage);
+
+    window.open(url, "_blank");
+}
+</script>
+
+<a href="https://wa.me/919915469651" class="whatsapp-float" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30">
+</a>
+</body>
+</html>
